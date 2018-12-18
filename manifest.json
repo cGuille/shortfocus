@@ -13,5 +13,7 @@
         "short-focus.js"
       ]
     }
-  ]
+  ],
+
+  "permissions": ["storage"]
 }
