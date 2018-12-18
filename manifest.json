@@ -8,7 +8,10 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["short-focus.js"]
+      "js": [
+        "node_modules/webextension-polyfill/dist/browser-polyfill.min.js",
+        "short-focus.js"
+      ]
     }
   ]
 }

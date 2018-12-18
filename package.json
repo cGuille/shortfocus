@@ -1,0 +1,12 @@
+{
+  "name": "shortfocus",
+  "version": "1.0.0",
+  "description": "A short-cut to quickly focus something on every websites.",
+  "dependencies": {
+    "webextension-polyfill": "^0.3.1"
+  },
+  "keywords": [
+    "webextension"
+  ],
+  "author": "Guillaume Charmetant <cguille.dev@gmail.com>"
+}
