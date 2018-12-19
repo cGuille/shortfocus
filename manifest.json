@@ -19,5 +19,15 @@
     }
   ],
 
+  "page_action": {
+    "show_matches": ["<all_urls>"],
+    "browser_style": true,
+    "default_icon": {
+      "19": "images/dark-logo_19.png",
+      "38": "images/dark-logo_38.png"
+    },
+    "default_title": "Define the currently focused element as the Short Focus."
+  },
+
   "permissions": ["storage"]
 }
