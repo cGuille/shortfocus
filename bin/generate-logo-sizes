@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -eu
+
+PROJECT_ROOT="$(dirname "${BASH_SOURCE[0]}")/.."
+
+cd "$PROJECT_ROOT/images"
+
+convert -resize 48x48 dark-logo.png dark-logo_48.png
+
+convert -resize 38x38 dark-logo.png dark-logo_38.png
+convert -resize 38x38 green-logo.png green-logo_38.png
+
+convert -resize 19x19 dark-logo.png dark-logo_19.png
+convert -resize 19x19 green-logo.png green-logo_19.png
+
+cd - >/dev/null
