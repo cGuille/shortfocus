@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A short-cut to quickly focus something on every websites.",
   "dependencies": {
+    "simmerjs": "^0.5.6",
     "webextension-polyfill": "^0.3.1"
   },
   "keywords": [
