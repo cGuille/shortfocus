@@ -5,6 +5,10 @@
   "version": "1.0",
   "description": "A short-cut to quickly focus something on every websites.",
 
+  "icons": {
+    "48": "images/dark-logo_48.png"
+  },
+
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
