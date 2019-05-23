@@ -20,6 +20,10 @@
     }
   ],
 
+  "web_accessible_resources": [
+    "images/dark-logo.png"
+  ],
+
   "page_action": {
     "show_matches": ["<all_urls>"],
     "browser_style": true,

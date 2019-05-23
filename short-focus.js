@@ -17,6 +17,55 @@
         return false;
     }
 
+    function createShortFocusLogoElt() {
+        const container = document.createElement('div');
+
+        container.style.opacity = '0';
+        container.style.display = 'flex';
+        container.style.position = 'absolute';
+        container.style.zIndex = '99999999'; // a lot
+        container.style.top = '0';
+        container.style.left = '0';
+        container.style.justifyContent = 'center';
+        container.style.alignItems = 'center';
+        container.style.margin = '0';
+        container.style.padding = '0';
+
+        const logo = document.createElement('img');
+
+        logo.src = chrome.runtime.getURL('images/dark-logo.png');
+
+        container.appendChild(logo);
+
+        return container;
+    }
+
+    const displayShortFocusLogo = (function displayShortFocusLogoScope() {
+        let shortFocusLogoElt;
+
+        const ANIMATION_STEPS = [
+            { opacity: '0.01' },
+            { opacity: '1' },
+            { opacity: '0.01' },
+        ];
+        const ANIMATION_OPTS = { duration: 500 };
+
+        return function displayShortFocusLogoFn() {
+            if (!shortFocusLogoElt) {
+                shortFocusLogoElt = createShortFocusLogoElt();
+            }
+
+            shortFocusLogoElt.style.height = window.innerHeight + 'px';
+            shortFocusLogoElt.style.width = window.innerWidth + 'px';
+
+            document.body.appendChild(shortFocusLogoElt);
+
+            shortFocusLogoElt
+                .animate(ANIMATION_STEPS, ANIMATION_OPTS)
+                .addEventListener('finish', () => document.body.removeChild(shortFocusLogoElt));
+        };
+    }());
+
     const HOST = window.location.host;
     const PATHNAME = window.location.pathname;
 
@@ -53,6 +102,8 @@
                 const keys = {};
                 keys[SITE_CONF_KEY] = keys[PAGE_CONF_KEY] = selector;
                 await browser.storage.local.set(keys);
+
+                displayShortFocusLogo();
             }
         }
     });
