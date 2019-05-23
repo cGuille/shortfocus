@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+PROJECT_ROOT="$(dirname "${BASH_SOURCE[0]}")/.."
+
+cd "$PROJECT_ROOT"
+
+npm install
+bin/generate-logo-sizes
+
+cd - >/dev/null
